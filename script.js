@@ -7,12 +7,14 @@ window.onload = e => {
     let hoverHolder = document.querySelector("#hover-holder");
 
     texts.forEach((text, index) => {
+        let buttonHolder = document.createElement("div");
         let button = document.createElement("button");
         let span = document.createElement("span");
         let shadowEl = document.createElement("div");
 
         span.innerText = text;
 
+        buttonHolder.classList.add("button-holder");
         button.classList.add(`button-${index + 1}`, "button-on");
         shadowEl.classList.add(`shadow`);
 
@@ -50,7 +52,8 @@ window.onload = e => {
 
         button.appendChild(shadowEl);
         button.appendChild(span);
-        hoverHolder.appendChild(button);
+        buttonHolder.append(button);
+        hoverHolder.appendChild(buttonHolder);
     });
 
     let styles = document.createElement("style");
